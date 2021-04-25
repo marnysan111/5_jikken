@@ -1,0 +1,28 @@
+main:28
+
+    int j,n, num[20];
+    for (i=0;i<3;i++) {
+        fscanf(fl,"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d", &data[0],&data[1],&data[2],&data[3],&data[4],&data[5],&data[6],&data[7],&data[8],&data[9],&data[10],&data[11]);
+        for (j=0;j<12;j++){
+            tmp[i][j] = data[j];
+            printf("%d ",tmp[i][j]);
+        }
+        printf("\n");
+    }
+
+//国語の成績のソート
+/*
+    for (i=0; i<3; i++) {
+        for (j=0;j<12;j++){
+            if (tmp[j][0] < tmp[j+1][0]) {
+                    for (n=0;n<12;n++){
+                        num[n] = tmp[j][n];
+                        tmp[j][n] = tmp[j+1][n];
+                        tmp[j+1][n] = num[n];
+                    }
+            }
+            printf("%d ", tmp[i][j]);
+        }
+        printf("\n");
+    }
+*/
