@@ -3,14 +3,8 @@
 int main(void){
     int tmp[20][20], i,j;
     read(tmp);
-    for (i=0;i<5;i++){
-        for(j=0;j<12;j++){
-            printf("%d ",tmp[i][j]);
-        }
-        printf("\n");
-    }
     sum(tmp);
-    //sort(tmp);
+    sort(tmp);
     write(tmp);
     return 0;
 }
@@ -59,8 +53,8 @@ int write(int tmp[20][20]) {
 
     for (i=0;i<5;i++){
         //fprintf(fl,"%d, %d, %d\n",tmp[i][0], tmp[i][1], tmp[i][2]);
-        for(j=0;j<12;j++){
-            fprintf(fl, "%d,",i+1);
+        fprintf(fl, "%d,",i+1);
+        for(j=0;j<17;j++){
             fprintf(fl,"%d,",tmp[i][j]);
         }
         fprintf(fl,"\n");
@@ -110,7 +104,6 @@ int sum(int tmp[20][20]) {
         goukei += tmp[i][15];
     }
     ave = goukei / 5;
-    //printf("合格点：%d\n",ave);
 
     //合否判定
     for(i=0;i<5;i++){
@@ -119,16 +112,28 @@ int sum(int tmp[20][20]) {
         } else {
             tmp[i][16] = 0;
         }
-    //printf("%d\n", tmp[i][16]);
     }
-    return 0;
-}
-/*
-int sort(int tmp[20][20]) {
-    int i,j;
+
     for(i=0;i<5;i++){
-        for
+        for(j=0;j<17;j++){
+            printf("%d ", tmp[i][j]);
+        }
+        printf("\n");
     }
     return 0;
 }
-*/
+int sort(int tmp[20][20]) {
+    int i,j,n,num[20];
+    for(i=0;i<5;i++){
+        for(j=0;j<4;j++){
+            for(n=0;n<17;n++){
+                if(tmp[j][16] < tmp[j+1][16]) {
+                num[n] = tmp[j][n];
+                tmp[j][n] = tmp[j+1][n];
+                tmp[j+1][n] = num[n];
+            }
+            }
+        }
+    }
+    return 0;
+}
