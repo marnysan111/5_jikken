@@ -120,6 +120,8 @@ int sum(int tmp[20][20]) {
         }
         printf("\n");
     }
+
+    printf("\n");
     return 0;
 }
 int sort(int tmp[20][20]) {
@@ -127,13 +129,20 @@ int sort(int tmp[20][20]) {
     for(i=0;i<5;i++){
         for(j=0;j<4;j++){
             for(n=0;n<17;n++){
-                if(tmp[j][16] < tmp[j+1][16]) {
-                num[n] = tmp[j][n];
-                tmp[j][n] = tmp[j+1][n];
-                tmp[j+1][n] = num[n];
-            }
+                if(tmp[j][15] < tmp[j+1][15]) {
+                    num[n] = tmp[j][n];
+                    tmp[j][n] = tmp[j+1][n];
+                    tmp[j+1][n] = num[n];
+                }
             }
         }
+    }
+
+    for(i=0;i<5;i++){
+        for(n=0;n<17;n++){
+            printf("%d ", tmp[i][n]);
+        }
+        printf("\n");
     }
     return 0;
 }
