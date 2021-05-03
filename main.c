@@ -1,15 +1,20 @@
 #include <stdio.h>
 
+<<<<<<< Updated upstream
 int main(void){
     int tmp[20][20], i,j;
     read(tmp);
     sum(tmp);
     sort(tmp);
     write(tmp);
+=======
+int main(){
+
+>>>>>>> Stashed changes
     return 0;
 }
 
-int read(int tmp[20][20]) {
+int read(){
     FILE *fl;
     int ret, data[20], count,i;
     char *file, buf[20][20];
@@ -33,6 +38,7 @@ int read(int tmp[20][20]) {
 
     fclose(fl);
     return 0;
+<<<<<<< Updated upstream
 }
 
 int write(int tmp[20][20]) {
@@ -145,4 +151,6 @@ int sort(int tmp[20][20]) {
         printf("\n");
     }
     return 0;
+=======
+>>>>>>> Stashed changes
 }
