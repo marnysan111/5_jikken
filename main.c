@@ -1,20 +1,15 @@
 #include <stdio.h>
 
-<<<<<<< Updated upstream
 int main(void){
     int tmp[20][20], i,j;
     read(tmp);
     sum(tmp);
     sort(tmp);
     write(tmp);
-=======
-int main(){
-
->>>>>>> Stashed changes
     return 0;
 }
 
-int read(){
+int read(int tmp[20][20]) {
     FILE *fl;
     int ret, data[20], count,i;
     char *file, buf[20][20];
@@ -38,7 +33,6 @@ int read(){
 
     fclose(fl);
     return 0;
-<<<<<<< Updated upstream
 }
 
 int write(int tmp[20][20]) {
@@ -126,8 +120,6 @@ int sum(int tmp[20][20]) {
         }
         printf("\n");
     }
-
-    printf("\n");
     return 0;
 }
 int sort(int tmp[20][20]) {
@@ -135,22 +127,13 @@ int sort(int tmp[20][20]) {
     for(i=0;i<5;i++){
         for(j=0;j<4;j++){
             for(n=0;n<17;n++){
-                if(tmp[j][15] < tmp[j+1][15]) {
-                    num[n] = tmp[j][n];
-                    tmp[j][n] = tmp[j+1][n];
-                    tmp[j+1][n] = num[n];
-                }
+                if(tmp[j][16] < tmp[j+1][16]) {
+                num[n] = tmp[j][n];
+                tmp[j][n] = tmp[j+1][n];
+                tmp[j+1][n] = num[n];
+            }
             }
         }
     }
-
-    for(i=0;i<5;i++){
-        for(n=0;n<17;n++){
-            printf("%d ", tmp[i][n]);
-        }
-        printf("\n");
-    }
     return 0;
-=======
->>>>>>> Stashed changes
 }
