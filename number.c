@@ -13,7 +13,7 @@ int read(int tmp[20][20]) {
     FILE *fl;
     int ret, data[20], count,i;
     char *file, buf[20][20];
-    if ((fl = fopen("output.csv", "r")) == NULL) {
+    if ((fl = fopen("sort.dat", "r")) == NULL) {
         printf("ERROR");
     }
     //１行目の取得
@@ -31,7 +31,8 @@ int read(int tmp[20][20]) {
 
 int call(int tmp[20][20], int num) {
     int i,j;
-    for(i=0;i<5;i++){
+    
+    for(i=0;i<10;i++){
         if(tmp[i][0] == num) {
             for(j=0;j<18;j++){
                 printf("%d ", tmp[i][j]);
@@ -39,5 +40,6 @@ int call(int tmp[20][20], int num) {
             printf("\n");
         }
     }
+    
     return 0;
 }
